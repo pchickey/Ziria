@@ -50,7 +50,8 @@ all: $(TGTS)
              --input-file-name=$*.infile \
              --input-file-mode=dbg \
              --output-file-name=$@ \
-             --output-file-mode=dbg
+             --output-file-mode=dbg \
+             --heap-size=268435456
 
 %.test: %.outfile
 	$(DIFF) -f $< -g $<.ground -d -v -n 0.9 -p
