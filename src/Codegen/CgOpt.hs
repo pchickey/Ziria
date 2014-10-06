@@ -720,6 +720,7 @@ codeGenComp dflags comp k =
                                            //case, it is just the return value 1.  Here we return
                                            //CONTINUE - 1 to indicate EOF on channel -1 (the input
                                            //channel).  See [CgSetupThreads.hs] for more information.
+                                           ;
                               |]
                    kontYield k
         else
