@@ -36,6 +36,12 @@ all:
 clean:
 	rm -rf obj wplc wplc.exe
 
+sandbox:
+	cabal sandbox init
+	cabal install text parsec mainland-pretty language-c-quote \
+		dlist unix-compat hashable pretty-show 
+clean-sandbox:
+	rm -rf .cabal-sandbox
 
 test: test-parser test-backend test-lut test-WiFi-all
 test-clean: test-parser-clean test-backend-clean test-lut-clean test-WiFi-all-clean
