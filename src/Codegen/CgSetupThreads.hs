@@ -59,8 +59,7 @@ thread_setup affinity_mask name buf_tys tids
                                  typename DWORD_PTR affinityMask = $int:affinity_mask;
                                  SetProcessAffinityMask(procHdl, affinityMask);
                                  $decl:my_sizes_decl;
-                                 // no_threads = $id:no_threads;
-                                 ;
+                                 // no_threads = $id:no_threads; 
                                  $stms:(my_sizes_inits (zip [0..] buf_tys)) 
                                  $stms:(user_routines (zip [0..] $ map ("__go" ++) tids'))
                                  $stms:ts_init_stmts
